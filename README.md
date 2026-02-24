@@ -37,7 +37,7 @@ It supports user registration (with OTP), role-based access (Customer & Admin), 
 
 - **Admin Privileges**
   - Manage food, orders, referral codes, ratings
-  - Update order status manually
+    - Update order status manually
 
 - **Data Persistence**
   - All data saved in `./data/` folder as JSON files
@@ -91,4 +91,29 @@ It supports user registration (with OTP), role-based access (Customer & Admin), 
 
      
 
+![User & Relationships](./images/user-relationships.png)
+
+![Order Status Lifecycle](./images/order-status-lifecycle.png)
+
+![Status Flow](./images/status-flow.png)
    
+
+##  Data Model Relationships
+User → Orders: one user can have many orders
+
+Order → User: each order belongs to one user
+
+Order → OrderItems: one order contains many order items
+
+FoodItem → OrderItems / CartItems: a food item can appear in many order items (as a snapshot) and many cart items
+
+User → Ratings: one user can leave many ratings
+
+Rating → Order: each rating may be linked to one order (optional)
+
+ReferralCode → Users: one referral code can be used by many users
+
+User → Cart: each user has one active cart
+
+Cart → CartItems: one cart contains many cart items
+
