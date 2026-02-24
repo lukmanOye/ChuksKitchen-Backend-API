@@ -117,3 +117,4 @@ User → Cart: each user has one active cart
 
 Cart → CartItems: one cart contains many cart items
 
+
